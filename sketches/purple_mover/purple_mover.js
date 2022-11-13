@@ -8,8 +8,11 @@ function setup() {
 
   for (let i = 1; i <= count; i++) {
     let r = random(5, 25);
-    m[i] = new Mover(random(r, width - r), random(r, height - r), r);
-    // m[i] = new Mover(width / 2, height / 2, r);
+    if (random() < 0.75) {
+      m[i] = new Mover(random(r, width - r), random(r, height - r), r);
+    } else {
+      m[i] = new Cube(random(r, width - r), random(r, height - r), r);
+    }
   }
 }
 
@@ -26,7 +29,7 @@ function draw() {
     if (mouseIsPressed) {
       force[i] = createVector(0, 0);
       force[i] = mouse.copy();
-      force[i].sub(m[i].pos);
+      force[i].sub(m[i]);
       force[i].mult(0.005);
       m[i].applyForce(force[i]);
     }
