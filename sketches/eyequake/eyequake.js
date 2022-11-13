@@ -20,23 +20,18 @@ function draw() {
   
 }
 
-
-// new way to define Object
 class Walker {
-  //setup values
   constructor() {
   	this.y = height/3;
   	this.w = 125;
   }
   
   update(power) {
-    //update position
   	this.x = random(width/2 - power, width/2 + power);
   	this.y = height/4 + mouseY/9;
   }
   
   display() {
-    //display walker
     fill(0);
 	ellipse(this.x, this.y, this.w, this.w*1.25);
   }

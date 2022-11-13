@@ -17,23 +17,19 @@ function draw() {
 }
 
 
-// new way to define Object
 class Walker {
-  //setup values
   constructor() {
   	this.y = height/3;
   	this.w = 1;
   }
   
   update() {
-    //update position
   	this.x = random(width);
   	this.y = height/4 + mouseY/9;
     this.w = random(10);
   }
   
   display() {
-    //display walker
     fill(0);
     stroke(255, random(100), random(100));
     strokeWeight(this.w);
@@ -42,7 +38,6 @@ class Walker {
 }
 
 function mouseClicked() {
-  //update position
   obj.x = random(width);
   obj.y = height/4 + mouseY/9;
   obj.w = random(10);

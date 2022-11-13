@@ -1,22 +1,3 @@
-let ball;
-let cnt;
-
-function setup() {
-  createCanvas(displayWidth/2, displayHeight/2);
-  ball = new Walker();
-  cnt = int(12);
-  textAlign(CENTER, CENTER);
-}
-
-function draw() {
-  background(220, 50);
-  textSize(12);
-  text("마우스로 화면을 클릭하세요", width/2 ,30);
-  text("수명이 다 닳으면 가운데로 돌아옵니다", width/2, height-30);
-  ball.update();
-  ball.display();
-}
-
 class Walker {
   constructor() {
     this.pos = createVector(random(width), random(height));
@@ -79,8 +60,4 @@ class Walker {
     text("공의 수명: "+cnt,width/2, 65);
 	ellipse(this.pos.x, this.pos.y, this.r*2);
   }
-}
-
-function mouseClicked() {
-  cnt++;
 }
